@@ -13,7 +13,10 @@ const Client = require('./');
 
 
 const client = await Client.login(process.env['token']);
-
+client.onready = async()=>{
+	const url = await client.thumbnail.headshot('420x420');
+	console.log(url);
+}
 
 
 })();
